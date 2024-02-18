@@ -346,7 +346,7 @@ void mtk_vcu_buffer_ref_dec(struct mtk_vcu_queue *vcu_queue,
 	mutex_unlock(&vcu_queue->mmap_lock);
 }
 
-extern void vcu_io_buffer_cache_sync(struct device *dev,
+void vcu_io_buffer_cache_sync(struct device *dev,
 	struct dma_buf *dbuf, int op)
 {
 	struct dma_buf_attachment *buf_att;
@@ -359,7 +359,7 @@ extern void vcu_io_buffer_cache_sync(struct device *dev,
 	dma_buf_detach(dbuf, buf_att);
 }
 
-extern int vcu_buffer_flush_all(struct device *dev, struct mtk_vcu_queue *vcu_queue)
+int vcu_buffer_flush_all(struct device *dev, struct mtk_vcu_queue *vcu_queue)
 {
 	struct mtk_vcu_mem *vcu_buffer;
 	unsigned int buffer, num_buffers;
@@ -388,7 +388,7 @@ extern int vcu_buffer_flush_all(struct device *dev, struct mtk_vcu_queue *vcu_qu
 	return 0;
 }
 
-extern int vcu_buffer_cache_sync(struct device *dev, struct mtk_vcu_queue *vcu_queue,
+int vcu_buffer_cache_sync(struct device *dev, struct mtk_vcu_queue *vcu_queue,
 	dma_addr_t dma_addr, size_t size, int op)
 {
 	struct mtk_vcu_mem *vcu_buffer;
