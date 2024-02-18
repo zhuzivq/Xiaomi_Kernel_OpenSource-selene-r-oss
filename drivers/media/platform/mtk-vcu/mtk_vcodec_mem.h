@@ -96,7 +96,7 @@ struct mtk_vcu_queue {
  * Return:      Return NULL if it is failed.
  * otherwise it is vcu queue to store the allocated buffer
  **/
-struct mtk_vcu_queue *mtk_vcu_mem_init(struct device *dev,
+extern struct mtk_vcu_queue *mtk_vcu_mem_init(struct device *dev,
 	struct device *cmdq_dev);
 
 /**
@@ -106,7 +106,7 @@ struct mtk_vcu_queue *mtk_vcu_mem_init(struct device *dev,
  *
  * Return: void
  **/
-void mtk_vcu_mem_release(struct mtk_vcu_queue *vcu_queue);
+extern void mtk_vcu_mem_release(struct mtk_vcu_queue *vcu_queue);
 
 /**
  * mtk_vcu_set_buffer - set the allocated buffer iova/va
@@ -117,7 +117,7 @@ void mtk_vcu_mem_release(struct mtk_vcu_queue *vcu_queue);
  *
  * Return: Return real address if it is ok, otherwise failed
  **/
-void *mtk_vcu_set_buffer(struct mtk_vcu_queue *vcu_queue,
+extern void *mtk_vcu_set_buffer(struct mtk_vcu_queue *vcu_queue,
 	struct mem_obj *mem_buff_data, struct vb2_buffer *src_vb,
 	struct vb2_buffer *dst_vb);
 
@@ -129,9 +129,9 @@ void *mtk_vcu_set_buffer(struct mtk_vcu_queue *vcu_queue,
  *
  * Return: Return real address if it is ok, otherwise failed
  **/
-void *mtk_vcu_get_buffer(struct mtk_vcu_queue *vcu_queue,
+extern void *mtk_vcu_get_buffer(struct mtk_vcu_queue *vcu_queue,
 						 struct mem_obj *mem_buff_data);
-void *mtk_vcu_get_page(struct mtk_vcu_queue *vcu_queue,
+extern void *mtk_vcu_get_page(struct mtk_vcu_queue *vcu_queue,
 						 struct mem_obj *mem_buff_data);
 
 /**
@@ -142,9 +142,9 @@ void *mtk_vcu_get_page(struct mtk_vcu_queue *vcu_queue,
  *
  * Return:      Return 0 if it is ok, otherwise failed
  **/
-int mtk_vcu_free_buffer(struct mtk_vcu_queue *vcu_queue,
+extern int mtk_vcu_free_buffer(struct mtk_vcu_queue *vcu_queue,
 						struct mem_obj *mem_buff_data);
-int mtk_vcu_free_page(struct mtk_vcu_queue *vcu_queue,
+extern int mtk_vcu_free_page(struct mtk_vcu_queue *vcu_queue,
 						struct mem_obj *mem_buff_data);
 
 /**
@@ -155,7 +155,7 @@ int mtk_vcu_free_page(struct mtk_vcu_queue *vcu_queue,
  *
  * Return:      Return 0 if it is ok, otherwise failed
  **/
-void mtk_vcu_buffer_ref_dec(struct mtk_vcu_queue *vcu_queue,
+extern void mtk_vcu_buffer_ref_dec(struct mtk_vcu_queue *vcu_queue,
 	void *mem_priv);
 
 /**
